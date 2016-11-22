@@ -56,7 +56,7 @@ public class ElizaServerTest {
 	@Test(timeout = 1000)
 	public void onChat() throws DeploymentException, IOException, URISyntaxException, InterruptedException {
 		//////////////////////// COMPLETE ME ////////////////////////
-		CountDownLatch latch = new CountDownLatch(4);
+		CountDownLatch latch = new CountDownLatch(5);
 		/////////////////////////////////////////////////////////////
 		List<String> list = new ArrayList<>();
 		ClientEndpointConfig configuration = ClientEndpointConfig.Builder.create().build();
@@ -64,7 +64,7 @@ public class ElizaServerTest {
 		client.connectToServer(new ElizaEndpointToComplete(list, latch), configuration, new URI("ws://localhost:8025/websockets/eliza"));
 		//////////////////////// COMPLETE ME ////////////////////////
 		latch.await();
-		assertEquals(4, list.size());
+		assertEquals(5, list.size());
 		assertEquals("Please don't apologize.", list.get(3));
 		/////////////////////////////////////////////////////////////
 	}
